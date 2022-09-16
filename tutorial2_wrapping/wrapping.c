@@ -8,6 +8,12 @@ int addNums(int a, int b)
 }
 
 EMSCRIPTEN_KEEPALIVE
+int subtractNums(int a, int b)
+{
+	return a - b;
+}
+
+EMSCRIPTEN_KEEPALIVE
 int main()
 {
 	printf("Hallo world %d\n", addNums(3, 5));

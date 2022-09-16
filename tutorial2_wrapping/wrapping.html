@@ -13,6 +13,17 @@
 <body>
 	<p>Hallo, WebAssembly</p>
 	<script>
+		var addNums = Module.cwrap(
+			"addNums",
+			"number",
+			["number", "number"],
+		)
+		var subtractNums = Module.cwrap(
+			"subtractNums",
+			"number",
+			["number", "number"],
+		)
+
 		function run_wasm(params) {
 			var result = Module.ccall(
 				"main",
@@ -30,6 +41,9 @@
 				["number", "number"],
 				[a, b]
 			)
+			result = addNums(a, b)
+			console.log(result);
+			result = subtractNums(a, b);
 			console.log(result);
 		}
 	</script>

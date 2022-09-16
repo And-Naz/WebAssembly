@@ -1875,6 +1875,7 @@ var ASM_CONSTS = {
     }
 
 
+
 var ASSERTIONS = true;
 
 function checkIncomingModuleAPI() {
@@ -1890,6 +1891,9 @@ var ___wasm_call_ctors = Module["___wasm_call_ctors"] = createExportWrapper("__w
 
 /** @type {function(...*):?} */
 var _addNums = Module["_addNums"] = createExportWrapper("addNums");
+
+/** @type {function(...*):?} */
+var _subtractNums = Module["_subtractNums"] = createExportWrapper("subtractNums");
 
 /** @type {function(...*):?} */
 var ___original_main = Module["___original_main"] = createExportWrapper("__original_main");
@@ -1942,6 +1946,7 @@ var dynCall_jiji = Module["dynCall_jiji"] = createExportWrapper("dynCall_jiji");
 // === Auto-generated postamble setup entry stuff ===
 
 Module["ccall"] = ccall;
+Module["cwrap"] = cwrap;
 var unexportedRuntimeSymbols = [
   'run',
   'UTF8ArrayToString',
@@ -2041,7 +2046,6 @@ var unexportedRuntimeSymbols = [
   'convertI32PairToI53Checked',
   'convertU32PairToI53',
   'getCFunc',
-  'cwrap',
   'uleb128Encode',
   'sigToWasmTypes',
   'convertJsFunctionToWasm',
